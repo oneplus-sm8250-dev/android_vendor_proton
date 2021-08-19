@@ -94,3 +94,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_r?=4 \
     ro.com.google.ime.kb_pad_land_l?=64 \
     ro.com.google.ime.kb_pad_land_r?=64 \
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    android.hidl.base@1.0.vendor \
+    android.hidl.manager@1.0.vendor
