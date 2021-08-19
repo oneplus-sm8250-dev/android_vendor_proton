@@ -35,6 +35,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RepainterServicePriv \
 
+# QTI permissions
+PRODUCT_COPY_FILES += \
+    vendor/proton/config/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
+    vendor/proton/config/permissions/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/qti_whitelist.xml
+
 # Permissions for Google product apps
 PRODUCT_COPY_FILES += \
     vendor/proton/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
