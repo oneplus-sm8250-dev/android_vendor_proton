@@ -61,6 +61,10 @@ TARGET_USES_MEDIA_EXTENSIONS := true
 # Allow building audio encoders
 TARGET_USES_QCOM_MM_AUDIO := true
 
+# Disable EAP Proxy because it depends on proprietary headers
+# and breaks WPA Supplicant compilation.
+DISABLE_EAP_PROXY := true
+
 # Enable color metadata for every UM platform
 ifneq ($(filter $(UM_PLATFORMS),$(TARGET_BOARD_PLATFORM)),)
     TARGET_USES_COLOR_METADATA := true
