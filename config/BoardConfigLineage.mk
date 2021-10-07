@@ -10,5 +10,5 @@ ifeq ($(WITH_GMS),true)
 include vendor/gms/products/board.mk
 endif
 
-BOARD_PLAT_PRIVATE_SEPOLICY_DIR += \
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     vendor/proton/sepolicy/common/private
