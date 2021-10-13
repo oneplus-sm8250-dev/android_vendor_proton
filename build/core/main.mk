@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Custom ROM version
--include vendor/proton/version.mk
+-include vendor/proton/build/core/version.mk
 
 # Signing
 -include vendor/proton/signing/keys.mk
