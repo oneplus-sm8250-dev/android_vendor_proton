@@ -12,7 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+CUSTOM_ROM_BUILD_DATE := $(shell date -u +%Y%m%d)
 CUSTOM_ROM_VERSION := 12.0.0
 
 ADDITIONAL_SYSTEM_PROPERTIES += \
+    ro.build.date.custom=$(CUSTOM_ROM_BUILD_DATE) \
     ro.build.version.custom=$(CUSTOM_ROM_VERSION)
