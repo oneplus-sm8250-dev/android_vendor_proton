@@ -30,3 +30,7 @@ PRODUCT_PACKAGES += \
 # Wallpapers
 PRODUCT_PACKAGES += \
     ProtonWallpaperStub \
+
+# Permissions for Google product apps
+PRODUCT_COPY_FILES += \
+    vendor/proton/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml

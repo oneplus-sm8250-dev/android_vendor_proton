@@ -23,10 +23,15 @@ $(call inherit-product, vendor/proton/audio/audio.mk)
 $(call inherit-product-if-exists, vendor/proton/signing/dev.mk)
 
 # Flatten APEXs for performance
+# TODO: fix Pixel 6 camera HAL flattening and re-enable this
+ifeq ($(filter raven oriole,$(TARGET_DEVICE)),)
 OVERRIDE_TARGET_FLATTEN_APEX := true
 # This needs to be specified explicitly to override ro.apex.updatable=true from
 # prebuilt vendors, as init reads /product/build.prop after /vendor/build.prop
 PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
+endif
+# Disable compressed APEX if not flattened
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -93,17 +98,24 @@ ifeq ($(WITH_GMS),true)
 
 $(call inherit-product, vendor/gms/products/gms.mk)
 
-# SetupWizard and Google Assistant properties
+# SetupWizard
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.setupwizard.rotation_locked=true \
     setupwizard.theme=glif_v3_light \
+
+# Google Assistant
+PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true \
+
+# Client ID
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.com.google.clientidbase=android-google \
 
 endif
 
 # Gboard side padding
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.com.google.ime.kb_pad_port_l=4 \
-    ro.com.google.ime.kb_pad_port_r=4 \
-    ro.com.google.ime.kb_pad_land_l=64 \
-    ro.com.google.ime.kb_pad_land_r=64 \
+    ro.com.google.ime.kb_pad_port_l?=4 \
+    ro.com.google.ime.kb_pad_port_r?=4 \
+    ro.com.google.ime.kb_pad_land_l?=64 \
+    ro.com.google.ime.kb_pad_land_r?=64 \
