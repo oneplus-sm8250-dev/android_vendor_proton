@@ -53,7 +53,4 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=android-google \
 
-# Overlays
-PRODUCT_PACKAGE_OVERLAYS += $(LOCAL_PATH)/gms_overlay
-
 endif
