@@ -31,6 +31,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ProtonWallpaperStub \
 
+# Repainter integration
+PRODUCT_PACKAGES += \
+    RepainterServicePriv \
+
 # Permissions for Google product apps
 PRODUCT_COPY_FILES += \
     vendor/proton/config/permissions/default-permissions-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default-permissions-product.xml
@@ -54,3 +58,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.clientidbase=android-google \
 
 endif
+
+# Sandboxed Google Play
+PRODUCT_PACKAGES += \
+    GmsCompat \
