@@ -76,6 +76,8 @@
 
     <!-- Extra location package names -->
     <string-array name="config_locationExtraPackageNames" translatable="false">
+        <!-- Bluetooth -->
+        <item>com.android.bluetooth</item>
         <!-- Google Play Services location history module -->
         <item>com.google.android.gms.location.history</item>
         <!-- TeleService -->
