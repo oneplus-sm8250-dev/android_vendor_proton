@@ -82,6 +82,8 @@
         <item>com.qualcomm.qti.cne</item>
         <!-- Google Play Services location history module -->
         <item>com.google.android.gms.location.history</item>
+        <!-- ImsService -->
+        <item>com.shannon.imsservice</item>
         <!-- TeleService -->
         <item>com.android.phone</item>
     </string-array>
