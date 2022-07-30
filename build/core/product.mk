@@ -88,6 +88,10 @@ PRODUCT_PACKAGES += \
     ssh-keygen \
     start-ssh \
 
+# Default ADB shell prompt
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    persist.sys.adb.shell=/system/xbin/bash
+
 # Gboard side padding
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_l?=4 \
